@@ -4,12 +4,22 @@
     <h3> Enter a chatterBox </h3>
     <div class="getName">
         <strong>Name:</strong>
-        <input type="text" placeholder="Choose a name!" name="name" value="{{name}}"/>
+        <input 
+            type="text" 
+            placeholder="Choose a name!" 
+            name="name" 
+            value="{{name}}"
+        />
     </div>
     <div class="join">
         <input type="text" placeholder="Room Code" name="roomCode" value="{{roomCode}}"/>
         <button type="submit" name="join"> Join a Room </button>
     </div>
     <button type="submit" name="create"> Create a Room </button>
+    {% if error %}
+    <ul>
+        <li> {{error}} </li>
+    </ul>
+    {% endif %}
 </form>
 {% endblock %}
