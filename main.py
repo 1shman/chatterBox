@@ -9,7 +9,7 @@ socketio = flask_socketio.SocketIO(app)
 
 @app.route("/", methods=["GET"])
 def show_index(): 
-    return flask.render_template("index.html")
+    return flask.render_template("home.html")
 
 if __name__ == "__main__":
     socketio.run(app, debug=True)
