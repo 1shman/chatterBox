@@ -60,5 +60,20 @@ def show_room():
 
     return flask.render_template("room.html")
 
+@socketio.on("connect")
+def connect(auth):
+    room = flask.session.get("room")
+    name = flask.session.get("name")
+    if not room or not name: 
+        return
+    if room not in rooms: 
+        flask_socketio.leave_room(room)
+        return
+    
+    flask_socketio.join_room(room)
+    flask_socketio.send({"name": name, "message": "has entered the room"}, to="room")
+    rooms[room]["members"] += 1
+    print(f"{name} joined room {room}")
+
 if __name__ == "__main__":
     socketio.run(app, debug=True)
