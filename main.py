@@ -51,7 +51,13 @@ def post_index():
     return flask.redirect(flask.url_for("show_room"))
 
 @app.route("/room")
-def show_room(): 
+def show_room():
+    #sanity check 
+    room = flask.session.get("room")
+    name = flask.session.get("name")
+    if room is None or name is None or room not in rooms:
+        return flask.redirect(flask.url_for("home"))
+
     return flask.render_template("room.html")
 
 if __name__ == "__main__":
