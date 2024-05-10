@@ -1,1 +1,24 @@
-kendrick lamar
+{% extends 'base.html' %} 
+{% block content %}
+<div class="chatBox">
+    <h3>chatterBox ID: {{room}}</h3>
+    <div class="messages" id="messages"> </div>
+    <div class="inputs"> 
+        <input 
+            type="text"
+            rows="3"
+            placeholder="Message"
+            name="message"
+            id="message"
+        />
+        <button type="button" name="send" id="sendButton" onClick="sendMessage()">
+            Send
+        </button>
+</div>
+<script type="text/javascript">
+    var socketio = io()
+    const sendMessage = () => {
+        console.log("kdot")
+    }; 
+</script>
+{% endblock %}
