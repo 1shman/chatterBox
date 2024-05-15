@@ -16,9 +16,32 @@
         </button>
 </div>
 <script type="text/javascript">
-    var socketio = io()
+    var socketio = io(); 
+
+    const messages = document.getElementById("messages"); 
+
+    const createMessage = (name, msg) => {
+        debugger
+        const content = `
+        <div class="text">
+            <span> 
+                <strong>${name}</strong>: ${msg}
+            </span>
+            <span class="muted"> 
+                ${new Date().toLocaleString()}
+            </span>
+        </div>
+        `; 
+        messages.innerHTML += content;
+    }; 
+
+    socketio.on("message", (data) => {
+        debugger
+        createMessage(data.name, data.message);
+    });
+
     const sendMessage = () => {
-        console.log("kdot")
+        console.log("kdot");
     }; 
 </script>
 {% endblock %}

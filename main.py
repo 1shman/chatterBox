@@ -2,6 +2,7 @@ import flask
 import flask_socketio
 import random
 import string
+import pdbp
 
 app = flask.Flask(__name__)
 app.config["SECRET_KEY"] = "filler"
@@ -70,7 +71,7 @@ def connect(auth):
         return
     
     flask_socketio.join_room(room)
-    flask_socketio.send({"name": name, "message": "has entered the room"}, to="room")
+    flask_socketio.send({"name": name, "message": "has entered the room"}, to=room)
     rooms[room]["members"] += 1
     print(f"{name} joined room {room}")
 
@@ -78,12 +79,13 @@ def connect(auth):
 def disconnect():
     room = flask.session.get("room")
     name = flask.session.get("name")
+    flask_socketio.leave_room(room)
 
     if room in rooms: 
         rooms[room]["members"] -= 1
         if rooms[room]["members"] < 1:
             del rooms[room]
-    flask_socketio.send({"name": name, "message": "has left the room"}, to="room")
+    flask_socketio.send({"name": name, "message": "has left the room"}, to=room)
     print(f"{name} left room {room}")
 
 if __name__ == "__main__":
