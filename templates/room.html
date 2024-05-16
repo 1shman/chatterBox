@@ -21,7 +21,6 @@
     const messages = document.getElementById("messages"); 
 
     const createMessage = (name, msg) => {
-        debugger
         const content = `
         <div class="text">
             <span> 
@@ -36,12 +35,14 @@
     }; 
 
     socketio.on("message", (data) => {
-        debugger
         createMessage(data.name, data.message);
     });
 
     const sendMessage = () => {
-        console.log("kdot");
+        const message = document.getElementById("message"); 
+        if (message.value == "") return; 
+        socketio.emit("message", { data: message.value }); 
+        message.value = ""; 
     }; 
 </script>
 {% endblock %}

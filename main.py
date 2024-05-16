@@ -58,7 +58,7 @@ def show_room():
     if room is None or name is None or room not in rooms:
         return flask.redirect(flask.url_for("show_index")) #bug issues/resolved
 
-    return flask.render_template("room.html")
+    return flask.render_template("room.html", code=room)
 
 @socketio.on("connect")
 def connect(auth):
