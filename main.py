@@ -71,6 +71,7 @@ def message(data):
     flask_socketio.send(content, to=room)
     rooms[room]["messages"].append(content)
     print(f"{flask.session.get('name')} said: {data['data']}")
+    #TODO: use python library to store time the message was sent
 
 @socketio.on("connect")
 def connect(auth):
@@ -102,3 +103,7 @@ def disconnect():
 
 if __name__ == "__main__":
     socketio.run(app, debug=True)
+
+#TODO: css styling and dynamic styled pages
+#TODO: enter button for send message
+#TODO: use python library to store time the message was sent
