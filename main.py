@@ -60,6 +60,18 @@ def show_room():
 
     return flask.render_template("room.html", code=room)
 
+
+@socketio.on("message")
+def message(data): 
+    room = flask.session.get("room")
+    if room not in rooms: 
+        return
+    
+    content = {"name": flask.session.get("name"), "message": data["data"]}
+    flask_socketio.send(content, to=room)
+    rooms[room]["messages"].append(content)
+    print(f"{flask.session.get('name')} said: {data['data']}")
+
 @socketio.on("connect")
 def connect(auth):
     room = flask.session.get("room")
