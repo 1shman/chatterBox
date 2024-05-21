@@ -94,3 +94,28 @@ a {
     color: inherit; /* Inherits the color from the parent element */
     text-align: center;
 }
+
+.chatBox {
+    background-color: aliceblue;
+    position: relative; 
+    width: 600px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 10px;
+    box-shadow: 0px 0.3em 0px 0px #df6d6d;
+}
+
+.chatBox h3 {
+    margin: 10px 0 10px 0; /* create space below the heading */
+    text-align: center;
+}
+
+.messages {
+    flex-grow: 1;
+    width: 100%;
+    overflow-y: auto; /* Scroll if content overflows */
+    padding: 10px;
+}
