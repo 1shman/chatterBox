@@ -103,6 +103,7 @@ def disconnect():
 if __name__ == "__main__":
     socketio.run(app, debug=True)
 
-#TODO: css styling and dynamic styled pages
+#TODO: dynamic styled pages
+#TODO: adjust input textbox style/dynamic growth for room.html
 #TODO: enter button for send message
 #TODO: use python library to store time the message was sent
