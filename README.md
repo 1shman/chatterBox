@@ -20,7 +20,8 @@ ChatterBox is a web application designed for real-time chat functionality, enabl
 
 ## Screenshots
 
-![Chatroom Screenshot](static/css/images/desktopHomeScreenshot.png)
+![Chatroom Home Page Screenshot](static/css/images/desktopHomeScreenshot.png)
+![Chatroom Room Page Screenshot](static/css/images/desktopRoomScreenshot.png)
 
 ## Technical Highlights
 
