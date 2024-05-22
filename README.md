@@ -18,6 +18,10 @@ ChatterBox is a web application designed for real-time chat functionality, enabl
 - **Interactive User Interface**
   - **Engaging and user-friendly design** with real-time updates for messages and user presence.
 
+## Screenshots
+
+![Chatroom Screenshot](static/css/images/desktopHomeScreenshot.png)
+
 ## Technical Highlights
 
 - **Flask Framework**
@@ -71,5 +75,5 @@ ChatterBox is a web application designed for real-time chat functionality, enabl
     http://127.0.0.1:5000
     ```
 
-Enjoy chatting with ChatterBox! For any questions or feedback, feel free to open an issue or contact me at <ishman@umich.edu>
+## Enjoy chatting with ChatterBox! For any questions or feedback, feel free to open an issue or contact me at <ishman@umich.edu>
 
