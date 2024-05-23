@@ -71,7 +71,7 @@ ChatterBox is a web application designed for real-time chat functionality, enabl
     python main.py
     ```
 
-5. **Open your browser and visit (use a incognito tab if opening the web application a second time):**
+5. **Open your browser and visit (use an incognito tab if opening a second tab):**
     ```sh
     http://127.0.0.1:5000
     ```
